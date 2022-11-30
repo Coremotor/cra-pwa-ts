@@ -1,31 +1,33 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import React from "react";
+import Navigation from "shared/navigation";
+import styled from "styled-components";
+import { brakePoints } from "shared/ui/brakepoints";
 
-function Layout() {
+const LayoutWrapper = () => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/nothing-here">Nothing Here</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <hr />
-
-      <Outlet />
-    </div>
+    <Container>
+      <Content>
+        <Outlet />
+      </Content>
+      <Navigation />
+    </Container>
   );
-}
+};
 
-export default Layout;
+export default LayoutWrapper;
+
+const Container = styled.div`
+  max-width: ${brakePoints.lg};
+  min-width: 360px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+`;
+const Content = styled.main`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+`;

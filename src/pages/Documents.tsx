@@ -2,13 +2,13 @@ import React from "react";
 import { NavBar } from "antd-mobile";
 import { ContentContainer } from "shared/ui/components";
 
-function Home() {
+function Documents() {
   return (
     <>
-      <NavBar backArrow={false}>Главная</NavBar>
+      <NavBar backArrow={false}>Документы</NavBar>
       <ContentContainer>content</ContentContainer>
     </>
   );
 }
 
-export default Home;
+export default Documents;

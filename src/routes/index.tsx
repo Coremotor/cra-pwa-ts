@@ -1,47 +1,41 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "pages/Login";
-import Layout from "shared/layout";
+import LayoutWrapper from "shared/layout";
 import Home from "pages/Home";
-import About from "pages/About";
-import Dashboard from "pages/Dashboard";
+import Documents from "pages/Documents";
+import Profile from "pages/Profile";
 import NoMatch from "pages/NoMatch";
 import React from "react";
-import RequireAuth from "routes/Protected";
-
-const RoutesNames = {
-  home: "/",
-  login: "login",
-  about: "about",
-  dashboard: "dashboard",
-};
+import Protected from "routes/Protected";
+import { RoutesNames } from "routes/routesNames";
 
 function RootRoutes() {
   return (
     <Routes>
       <Route path={RoutesNames.login} element={<Login />} />
-      <Route element={<Layout />}>
+      <Route element={<LayoutWrapper />}>
         <Route
           path={RoutesNames.home}
           element={
-            <RequireAuth>
+            <Protected>
               <Home />
-            </RequireAuth>
+            </Protected>
           }
         />
         <Route
-          path={RoutesNames.about}
+          path={RoutesNames.docs}
           element={
-            <RequireAuth>
-              <About />
-            </RequireAuth>
+            <Protected>
+              <Documents />
+            </Protected>
           }
         />
         <Route
-          path={RoutesNames.dashboard}
+          path={RoutesNames.profile}
           element={
-            <RequireAuth>
-              <Dashboard />
-            </RequireAuth>
+            <Protected>
+              <Profile />
+            </Protected>
           }
         />
         <Route path="*" element={<NoMatch />} />
