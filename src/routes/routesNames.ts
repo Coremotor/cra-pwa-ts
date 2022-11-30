@@ -1,6 +1,8 @@
 export const RoutesNames = {
   home: "/",
+  statements: "/statements",
   login: "/login",
-  profile: "/profile",
+  salary: "/salary",
   docs: "/docs",
+  profile: "/profile",
 };

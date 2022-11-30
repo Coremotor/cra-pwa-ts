@@ -8,12 +8,27 @@ import { ReactComponent as ProfileIcon } from "assets/icons/profile.svg";
 import { ReactComponent as HomeIconActive } from "assets/icons/home-active.svg";
 import { ReactComponent as DocsIconActive } from "assets/icons/docs-active.svg";
 import { ReactComponent as ProfileIconActive } from "assets/icons/profile-active.svg";
+import { ReactComponent as StatementsIconActive } from "assets/icons/statements-active.svg";
+import { ReactComponent as StatementsIcon } from "assets/icons/statements.svg";
+import { ReactComponent as SalaryIconActive } from "assets/icons/salary-active.svg";
+import { ReactComponent as SalaryIcon } from "assets/icons/salary.svg";
 
 const tabs = [
   {
     key: RoutesNames.home,
-    title: "Home",
+    title: "Главная",
     icon: (active: boolean) => (active ? <HomeIconActive /> : <HomeIcon />),
+  },
+  {
+    key: RoutesNames.statements,
+    title: "Заявления",
+    icon: (active: boolean) =>
+      active ? <StatementsIconActive /> : <StatementsIcon />,
+  },
+  {
+    key: RoutesNames.salary,
+    title: "Зарплата",
+    icon: (active: boolean) => (active ? <SalaryIconActive /> : <SalaryIcon />),
   },
   {
     key: RoutesNames.docs,

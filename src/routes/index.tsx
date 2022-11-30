@@ -8,6 +8,8 @@ import NoMatch from "pages/NoMatch";
 import React from "react";
 import Protected from "routes/Protected";
 import { RoutesNames } from "routes/routesNames";
+import Statements from "pages/Statements";
+import Salary from "pages/Salary";
 
 function RootRoutes() {
   return (
@@ -19,6 +21,22 @@ function RootRoutes() {
           element={
             <Protected>
               <Home />
+            </Protected>
+          }
+        />
+        <Route
+          path={RoutesNames.statements}
+          element={
+            <Protected>
+              <Statements />
+            </Protected>
+          }
+        />
+        <Route
+          path={RoutesNames.salary}
+          element={
+            <Protected>
+              <Salary />
             </Protected>
           }
         />
