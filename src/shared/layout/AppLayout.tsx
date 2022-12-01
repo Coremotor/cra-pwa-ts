@@ -4,7 +4,7 @@ import Navigation from "shared/navigation";
 import styled from "styled-components";
 import { brakePoints } from "shared/ui/brakepoints";
 
-const LayoutWrapper = () => {
+const AppLayout = () => {
   return (
     <Container>
       <Content>
@@ -15,7 +15,7 @@ const LayoutWrapper = () => {
   );
 };
 
-export default LayoutWrapper;
+export default AppLayout;
 
 const Container = styled.div`
   max-width: ${brakePoints.lg};

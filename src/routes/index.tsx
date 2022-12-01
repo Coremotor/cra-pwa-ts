@@ -1,26 +1,31 @@
-import { Route, Routes } from "react-router-dom";
-import Login from "pages/Login";
-import LayoutWrapper from "shared/layout";
-import Home from "pages/Home";
-import Documents from "pages/Documents";
-import Profile from "pages/Profile";
-import NoMatch from "pages/NoMatch";
 import React from "react";
-import Protected from "routes/Protected";
+import { Route, Routes } from "react-router-dom";
 import { RoutesNames } from "routes/routesNames";
-import Statements from "pages/Statements";
-import Salary from "pages/Salary";
+import AppLayout from "shared/layout/AppLayout";
+import LoginPage from "pages/Login";
+import HomePage from "pages/Home";
+import DocumentsPage from "pages/Documents";
+import ProfilePage from "pages/Profile";
+import NoMatchPage from "pages/NoMatch";
+import StatementsPage from "pages/Statements";
+import SalaryPage from "pages/Salary";
+import Protected from "routes/Protected";
+import PhoneConfirmation from "pages/PhoneConfirmation";
 
 function RootRoutes() {
   return (
     <Routes>
-      <Route path={RoutesNames.login} element={<Login />} />
-      <Route element={<LayoutWrapper />}>
+      <Route path={RoutesNames.login} element={<LoginPage />} />
+      <Route
+        path={RoutesNames.phoneConfirmation}
+        element={<PhoneConfirmation />}
+      />
+      <Route element={<AppLayout />}>
         <Route
           path={RoutesNames.home}
           element={
             <Protected>
-              <Home />
+              <HomePage />
             </Protected>
           }
         />
@@ -28,7 +33,7 @@ function RootRoutes() {
           path={RoutesNames.statements}
           element={
             <Protected>
-              <Statements />
+              <StatementsPage />
             </Protected>
           }
         />
@@ -36,7 +41,7 @@ function RootRoutes() {
           path={RoutesNames.salary}
           element={
             <Protected>
-              <Salary />
+              <SalaryPage />
             </Protected>
           }
         />
@@ -44,7 +49,7 @@ function RootRoutes() {
           path={RoutesNames.docs}
           element={
             <Protected>
-              <Documents />
+              <DocumentsPage />
             </Protected>
           }
         />
@@ -52,11 +57,11 @@ function RootRoutes() {
           path={RoutesNames.profile}
           element={
             <Protected>
-              <Profile />
+              <ProfilePage />
             </Protected>
           }
         />
-        <Route path="*" element={<NoMatch />} />
+        <Route path="*" element={<NoMatchPage />} />
       </Route>
     </Routes>
   );

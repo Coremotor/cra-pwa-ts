@@ -1,8 +1,8 @@
 import React from "react";
 import { NavBar } from "antd-mobile";
-import { ContentContainer } from "shared/ui/components";
+import { ContentContainer } from "shared/ui/containers";
 
-function Home() {
+function HomePage() {
   return (
     <>
       <NavBar backArrow={false}>Главная</NavBar>
@@ -11,4 +11,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

@@ -1,8 +1,8 @@
 import React from "react";
 import { NavBar } from "antd-mobile";
-import { ContentContainer } from "shared/ui/components";
+import { ContentContainer } from "shared/ui/containers";
 
-function Statements() {
+function StatementsPage() {
   return (
     <>
       <NavBar backArrow={false}>Заявления</NavBar>
@@ -11,4 +11,4 @@ function Statements() {
   );
 }
 
-export default Statements;
+export default StatementsPage;

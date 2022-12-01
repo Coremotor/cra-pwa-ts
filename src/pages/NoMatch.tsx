@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 
-function NoMatch() {
+function NoMatchPage() {
   return (
     <div>
       <h2>Nothing to see here!</h2>
@@ -12,4 +12,4 @@ function NoMatch() {
   );
 }
 
-export default NoMatch;
+export default NoMatchPage;
